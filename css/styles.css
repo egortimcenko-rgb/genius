@@ -36,7 +36,9 @@
   --fifth-color: #cfcfbc;
 }
 /* Base */
-* {
+*,
+* ::after,
+* ::before {
   box-sizing: border-box;
 }
 
@@ -88,6 +90,10 @@ address {
   max-width: 1288px;
   margin: 0px auto;
   padding: 0 24px;
+}
+
+a {
+  display: inline-block;
 }
 
 /* Button */
@@ -252,6 +258,19 @@ header {
     -16px 16px 0 2px var(--fourth-color);
 }
 
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+.chefs-list {
+  display: flex;
+  gap: 30px;
+}
+
+.chefs-item {
+  flex-basis: calc(100% - 30px / 2);
+}
+
 /* Formats section */
 .formats-list {
   justify-content: center;
@@ -284,11 +303,47 @@ header {
   font-weight: 300;
 }
 
+.formats-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--third-color);
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+  flex-shrink: 0;
+  fill: var(--third-color);
+}
+
+.formats-container {
+  display: flex;
+  gap: 33px;
+  align-items: center;
+}
+
+.formats-btn:hover {
+  fill: var(--first-color);
+  background-color: var(--third-color);
+}
+
 /* Contact section */
 .contact-title {
   margin-bottom: 16px;
 }
 
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
 /* Footer */
 footer {
   background-image: url(/images/footer-background.jpg);
@@ -296,6 +351,33 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 32px 0;
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav {
+  flex-basis: 50%;
+  display: flex;
+}
+
+.footer-address {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-menu,
+.footer-logo {
+  flex-grow: 1;
+}
+
+.adress-list,
+.adddres-info {
+  flex-grow: 1;
 }
 
 .address-link {
@@ -303,6 +385,14 @@ footer {
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+}
+
+.adress-icon {
+  fill: var(--first-color);
+}
+
+.adress-icon:hover {
+  fill: var(--second-color-light);
 }
 
 .address-link:hover {
