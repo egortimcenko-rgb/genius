@@ -164,7 +164,7 @@ header {
 
 .hero-section {
   padding: 272px 0;
-  background-image: url(/images/hero-background.jpg);
+  background-image: url(../images/hero-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -235,12 +235,23 @@ header {
 /* Chefs section */
 .chefs-title {
   margin: 0 auto 80px;
+  position: relative;
+}
+
+.chefs-title::before {
+  left: 0;
+  bottom: 34px;
+}
+
+.chefs-title::after {
+  right: 0px;
+  bottom: 34px;
 }
 
 .chefs-title::after,
 .chefs-title::before {
-  display: block;
-  width: 392;
+  position: absolute;
+  width: 352px;
   border: 2px solid var(--fifth-color);
   content: "";
 }
@@ -346,12 +357,35 @@ header {
 }
 /* Footer */
 footer {
-  background-image: url(/images/footer-background.jpg);
+  background-image: url(../images/footer-background.jpg);
   background-color: var(--third-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 32px 0;
+  position: relative;
+}
+
+footer::before,
+footer::after {
+  position: absolute;
+  bottom: 0;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+footer::before {
+  width: 180px;
+  height: 120px;
+  left: 0;
+  background-image: url("../images/decor-bread-small.png");
+}
+
+footer::after {
+  width: 380px;
+  height: 190px;
+  right: 0;
+  background-image: url("../images/decor-bread-big.png");
 }
 
 .footer-container {
@@ -402,4 +436,41 @@ footer {
 .address-copyright {
   font-size: 14px;
   color: var(--fourth-color);
+}
+
+/* Modal */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: relative;
+  width: 880px;
+  height: 880px;
+  background-color: var(--first-color);
+  border-radius: 32px;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
